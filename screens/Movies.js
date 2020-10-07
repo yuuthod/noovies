@@ -4,24 +4,9 @@ import { movieApi } from "../api";
 
 
 export default ({navigation}) => {
-  const [nowPlaying, setNowPlaying] = useState({
-    movies: [],
-    error: null
-  })
   const getData = async() => {
-    try {
-      const {
-        data: { results },
-      } = await movieApi.nowPlaying();
-      setNowPlaying({
-        movies: results,
-        error: null,
-      });
-    } catch(error) {
-      setNowPlaying({
-        error
-      })
-    }
+    const [nowPlaying, error] = await movieApi.nowPlaying();
+    console.log(nowPlaying, error);
   };
   useEffect(() => {
     getData();
