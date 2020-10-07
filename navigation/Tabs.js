@@ -13,13 +13,7 @@ export default ({ navigation, route }) => {
   useEffect(() => {
     const name = getHeaderName(route);
     navigation.setOptions({
-      title: name,
-      // 조건에 따라 네비게이션을 숨길 수 있다.
-      headerShown: name !== "TV",
-      // 조건에 따라 스타일 변경도 가능
-      headerStyle: {
-        backgroundColor: name === "TV" ? "blue" : "white",
-      },
+      title: name
     });
   }, [route]);
 
