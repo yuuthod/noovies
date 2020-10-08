@@ -4,23 +4,22 @@ import { movieApi } from "../api";
 
 export default () => {
   const [discover, setDiscover] = useState({
-    discover: [],
+    results: [],
     error: null,
   });
   const getData = async () => {
-    const [discover, error] = await movieApi.discover();
+    const [results, error] = await movieApi.discover();
     setDiscover({
-      discover,
-      error
+      results,
+      error,
     });
-    console.log(discover.length);
   };
   useEffect(() => {
     getData();
   }, []);
   return (
     <View>
-      <Text>{discover.length}</Text>
+      <Text>{discover.results.length}</Text>
     </View>
   );
 };
