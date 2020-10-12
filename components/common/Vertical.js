@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components';
+import styled from "styled-components/native";
 import PropTypes from 'prop-types'
 import { apiImage } from '../../api';
 import Votes from './Votes';
@@ -22,7 +22,7 @@ const Vertical = ({id, poster, title, votes}) => {
   return (
     <TouchableOpacity>
       <Container>
-        <Poster url={apiImage(poster)}></Poster>
+        <Poster url={poster}></Poster>
         <Title>{title.length > 10 ? `${title.slice(0, 10)}...` : title}</Title>
         <Votes votes={votes} />
       </Container>

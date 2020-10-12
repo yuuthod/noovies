@@ -1,10 +1,11 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/native";
 import PropTypes from "prop-types";
 
 const Text = styled.Text`
   color: white;
-  margin-left: 30px
+  margin-left: 30px;
+  margin-bottom: 20px;
 `;
 
 const Title = ({ title }) => {

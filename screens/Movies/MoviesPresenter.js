@@ -16,13 +16,14 @@ const SliderContainer = styled.View`
   margin-bottom: 50px;
 `;
 
-const Container = styled.View``;
+const Container = styled.View`
+  margin-bottom: 50px;
+`;
 
 export default ({ loading, nowPlaying, popular, upcoming }) => (
   <ScrollView
     style={{ backgroundColor: "black" }}
     contentContainerStyle={{
-      flex: 1,
       justifyContent: loading ? "center" : "flex-start",
     }}
   >
@@ -63,6 +64,8 @@ export default ({ loading, nowPlaying, popular, upcoming }) => (
               />
             ))}
           </ScrollView>
+        </Container>
+        <Container>
           <Title title={"Comming Soon"}></Title>
           {upcoming.map((movie) => (
             <Horizontal
